@@ -1,6 +1,4 @@
-package model.sperimental
-
-import model.sperimental
+package org.salestaxes.sperimental
 
 class GoodChest(val goods: List[Good]) {
 
@@ -12,13 +10,13 @@ class GoodChest(val goods: List[Good]) {
 }
 
 object GoodChest {
-  def totalPrice(goods: List[sperimental.Good]): Double =
+  def totalPrice(goods: List[Good]): Double =
     goods.foldLeft(0.0)((a, b) => { b sumPrice a })
 
   /* restituisce stesso valore dell gli elementi della lista */
 //  def totalPrice2(goods: List[classic.Good]): Double =
 //    goods.reduceLeft((a, b) => { a sumPrice b.price })
 
-  def totalSalesTaxes(goods: List[sperimental.Good]): Double =
+  def totalSalesTaxes(goods: List[Good]): Double =
     goods.foldLeft(0.0)((a, b) => { b sumTax a })
 }

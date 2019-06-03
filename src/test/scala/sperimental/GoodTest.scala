@@ -1,8 +1,9 @@
 package sperimental
 
-import model.sperimental._
+
+import org.salestaxes.sperimental.{Book, Food, Good, GoodChest, Medical}
 import org.scalatest.FunSuite
-import utils.RoundRules
+import org.salestaxes.utils.RoundRules
 
 class GoodTest extends FunSuite {
 

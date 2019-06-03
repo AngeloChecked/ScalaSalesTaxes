@@ -1,6 +1,6 @@
-package model.classic.model
+package org.salestaxes.classic.model
 
-import model.classic.model.good.Good
+import org.salestaxes.classic.model.good.Good
 
 class GoodChest(val goods: List[Good]) {
 

@@ -1,9 +1,10 @@
 package classic
 
-import model.classic.model.GoodChest
-import model.classic.model.good.{Book, Food, Good, Medical}
+
+import org.salestaxes.classic.model.GoodChest
+import org.salestaxes.classic.model.good.{Book, Food, Good, Medical}
 import org.scalatest.FunSuite
-import utils.RoundRules
+import org.salestaxes.utils.RoundRules
 
 class GoodTest extends FunSuite {
 
@@ -64,6 +65,8 @@ class GoodTest extends FunSuite {
     new Food("chocolate bar", 1, 0.85, false)
   )
 
+  val goodChest1 = new GoodChest(items1)
+
   test("total 1") {
     assert(GoodChest.totalPrice(items1) == 42.32)
   }
@@ -72,17 +75,29 @@ class GoodTest extends FunSuite {
     assert(GoodChest.totalSalesTaxes(items1) == 1.50)
   }
 
+  test("chest total 1") {
+    assert(goodChest1.totalPrice == 42.32)
+    assert(goodChest1.totalSalesTaxes == 1.50)
+  }
+
   val items2 = List(
     new Food("box of chocolates", 1, 10.00, true),
     new Good("bottle of perfume", 1, 47.50, true)
   )
 
+  val goodChest2 = new GoodChest(items2)
+
   test("total 2") {
-    assert(GoodChest.totalPrice(items3) == 98.38)
+    assert(GoodChest.totalPrice(items2) == 65.15)
   }
 
   test("Sales Taxes total 2") {
-    assert(GoodChest.totalSalesTaxes(items3) == 7.90)
+    assert(GoodChest.totalSalesTaxes(items2) == 7.65)
+  }
+
+  test("chest total 2") {
+    assert(goodChest2.totalPrice == 65.15)
+    assert(goodChest2.totalSalesTaxes == 7.65)
   }
 
   val items3 = List(
@@ -92,12 +107,19 @@ class GoodTest extends FunSuite {
     new Food("box of chocolates", 3, 11.25, true)
   )
 
+  val goodChest3 = new GoodChest(items3)
+
   test("total 3") {
     assert(GoodChest.totalPrice(items3) == 98.38)
   }
 
   test("Sales Taxes total 3") {
     assert(GoodChest.totalSalesTaxes(items3) == 7.90)
+  }
+
+  test("chest total 3") {
+    assert(goodChest3.totalPrice == 98.38)
+    assert(goodChest3.totalSalesTaxes == 7.90)
   }
 
 }

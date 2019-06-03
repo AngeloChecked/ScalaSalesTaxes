@@ -1,6 +1,6 @@
-package model.sperimental
+package org.salestaxes.sperimental
 
-import utils.{RoundRules}
+import org.salestaxes.utils.{RoundRules}
 
 trait Importable {
   var imported: Boolean

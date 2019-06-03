@@ -1,7 +1,7 @@
-package model.classic.model.good
+package org.salestaxes.classic.model.good
 
-import model.classic.model.parameter.{Importable, NoTaxable, Roundable, Taxable}
-import utils.RoundRules
+import org.salestaxes.classic.model.parameter.{Importable, Roundable, Taxable}
+import org.salestaxes.utils.RoundRules
 
 class Good(val name: String,
            val quantity: Int,
