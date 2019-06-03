@@ -1,6 +1,6 @@
-package model.classic
+package model.classic.model
 
-import model.classic
+import model.classic.model.good.Good
 
 class GoodChest(val goods: List[Good]) {
 
@@ -12,9 +12,9 @@ class GoodChest(val goods: List[Good]) {
 }
 
 object GoodChest {
-  def totalPrice(goods: List[classic.Good]): Double =
+  def totalPrice(goods: List[Good]): Double =
     goods.foldLeft(0.0)((a, b) => { b sumPrice a })
 
-  def totalSalesTaxes(goods: List[classic.Good]): Double =
+  def totalSalesTaxes(goods: List[Good]): Double =
     goods.foldLeft(0.0)((a, b) => { b sumTax a })
 }

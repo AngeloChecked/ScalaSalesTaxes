@@ -1,6 +1,7 @@
 package classic
 
-import model.classic._
+import model.classic.model.GoodChest
+import model.classic.model.good.{Book, Food, Good, Medical}
 import org.scalatest.FunSuite
 import utils.RoundRules
 
