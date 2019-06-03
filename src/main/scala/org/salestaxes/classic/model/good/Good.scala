@@ -13,12 +13,12 @@ class Good(val name: String,
            private val importing: Importable = new Importable(5)) {
 
   def price: Double = {
-    val (taxAct, importTaxAct) = rounedTaxes()
+    val (taxAct, importTaxAct) = rounedTaxes
     (_price + taxAct + importTaxAct) * quantity
   }
 
   def sumTax(value: Double): Double = {
-    val (taxAct, importTaxAct) = rounedTaxes()
+    val (taxAct, importTaxAct) = rounedTaxes
     val taxTotal = (taxAct + importTaxAct) * quantity
     rouding.round(taxTotal + value)
   }
@@ -40,7 +40,7 @@ class Good(val name: String,
 
   def sumPrice(aGood: Good): Double = price + aGood.price
 
-  def rounedTaxes(): (Double, Double) = {
+  def rounedTaxes: (Double, Double) = {
     val taxAct = rouding.round(taxing.calculateTax(_price))
     val importTaxAct =
       if (imported) rouding.round(importing.calculateImportTax(_price)) else 0.0
