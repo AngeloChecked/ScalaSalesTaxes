@@ -1,6 +1,6 @@
-package org.salestaxes.classic.model
+package org.salestaxes
 
-import org.salestaxes.classic.model.good.Good
+import org.salestaxes.good.Good
 
 class GoodChest(val goods: List[Good]) {
   def totalPrice(): Double =

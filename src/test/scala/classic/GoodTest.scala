@@ -1,7 +1,7 @@
 package classic
 
-import org.salestaxes.classic.model.GoodChest
 import org.salestaxes.classic.model.good.{Book, Food, Good, Medical}
+import org.salestaxes.model.GoodChest
 import org.scalatest.{FunSuite, Matchers, WordSpec}
 
 class GoodTest extends WordSpec with Matchers {

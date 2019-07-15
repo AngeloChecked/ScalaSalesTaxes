@@ -1,4 +1,4 @@
-package org.salestaxes.classic.model.good
+package org.salestaxes.good
 
 class Good(val name: String,
            val quantity: Int,
