@@ -5,8 +5,8 @@ class Good(val name: String,
            protected val _price: Double,
            val imported: Boolean,
            private val round: PriceModifier = Good.roundUpNear05,
-           private val taxFrom: PriceModifier = Good.round(10),
-           private val importingTaxFrom: PriceModifier = Good.round(5)) {
+           private val taxFrom: PriceModifier = Good.fractionize(10),
+           private val importingTaxFrom: PriceModifier = Good.fractionize(5)) {
 
   def price: Double = (_price + tax + importedTax) * quantity
 
@@ -27,8 +27,10 @@ class Good(val name: String,
 }
 
 object Good {
-  def round(percentage: Int): PriceModifier =
+  def fractionize(percentage: Int): PriceModifier =
     (price) => price / 100 * percentage
+
   def roundUpNear05: PriceModifier = (price) => (Math.ceil(price * 20)) / 20
-  def noRound: PriceModifier = ((_) => 0.0)
+
+  def noUsage: PriceModifier = ((_) => 0.0)
 }
