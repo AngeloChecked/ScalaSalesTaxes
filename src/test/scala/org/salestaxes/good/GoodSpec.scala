@@ -22,7 +22,7 @@ class GoodSpec extends WordSpec with Matchers {
     }
   }
 
-  "imported and taxed generic goods strings" should {
+  "imported and taxed generic goods string" should {
     "return '1 imported <name>: <price>'" in {
       val good = new Good("bottle of perfume", 1, 47.50, true)
 

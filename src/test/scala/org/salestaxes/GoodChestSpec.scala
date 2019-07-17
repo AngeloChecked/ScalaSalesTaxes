@@ -53,6 +53,7 @@ class GoodChestSpec extends WordSpec with Matchers {
     "return total price" in {
       totalPrice should be(98.38)
     }
+
     "return total sales taxes" in {
       totalSalesTaxes should be(7.90)
     }
