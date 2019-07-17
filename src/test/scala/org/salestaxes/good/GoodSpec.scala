@@ -5,8 +5,8 @@ import org.scalatest.{Matchers, WordSpec}
 class GoodSpec extends WordSpec with Matchers {
 
   "a price" when {
-    "round up" should {
-      "nearest .05" in {
+    "rounded up" should {
+      "return the itself nearest .05 number" in {
         Good.roundUpNear05(.01) should be(.05)
         Good.roundUpNear05(.02) should be(.05)
         Good.roundUpNear05(.03) should be(.05)
@@ -22,43 +22,47 @@ class GoodSpec extends WordSpec with Matchers {
     }
   }
 
-
-  "good strings" should {
-    "1 item imported and taxed" in {
+  "imported and taxed generic goods strings" should {
+    "return '1 imported <name>: <price>'" in {
       val good = new Good("bottle of perfume", 1, 47.50, true)
 
       good.toString should be("1 imported bottle of perfume: 54.65")
     }
 
-    "2 items imported and taxed" in {
+    "return '<quantity> imported <name>: <price>'" in {
       val good = new Good("bottle of perfume", 2, 47.50, true)
 
       good.toString should be("2 imported bottle of perfume: 109.30")
     }
+  }
 
-    "1 item taxed" in {
+  "taxed generic goods string" should {
+    "return '1 <name>: <price>'" in {
       val good = new Good("music CD", 1, 14.99, false)
 
       good.toString should be("1 music CD: 16.49")
     }
 
-    "2 items taxed" in {
+    "return '<quantity> <name>: <price>'" in {
       val good = new Good("music CD", 2, 14.99, false)
 
       good.toString should be("2 music CD: 32.98")
     }
+  }
 
-    "1 food" in {
+  "generic no-taxable goods string" should {
+    "return '1 <name>: <price>'" in {
       val good = new Food("chocolate bar", 1, 0.85, false)
 
       good.toString should be("1 chocolate bar: 0.85")
     }
+  }
 
-    "3 food imported" in {
+  "generic imported no-taxable goods string" should {
+    "return '<quantity> imported <name>: <price>'" in {
       val good = new Food("box of chocolates", 3, 11.25, true)
 
       good.toString should be("3 imported box of chocolates: 35.55")
     }
   }
-
 }

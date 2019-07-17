@@ -2,23 +2,23 @@ package org.salestaxes.good
 
 class Good(val name: String,
            val quantity: Int,
-           protected val _price: Double,
+           val unitaryPrice: Double,
            val imported: Boolean,
            private val round: PriceModifier = Good.roundUpNear05,
            private val taxFrom: PriceModifier = Good.fractionize(10),
            private val importingTaxFrom: PriceModifier = Good.fractionize(5)) {
 
-  def price: Double = (_price + tax + importedTax) * quantity
+  def price: Double = (unitaryPrice + tax + importedTax) * quantity
 
   def sumTax(value: Double): Double =
     round((tax + importedTax) * quantity + value)
 
   def sumPrice(value: Double): Double = price + value
 
-  def tax: Double = round(taxFrom(_price))
+  def tax: Double = round(taxFrom(unitaryPrice))
 
   def importedTax: Double =
-    if (imported) round(importingTaxFrom(_price)) else 0.0
+    if (imported) round(importingTaxFrom(unitaryPrice)) else 0.0
 
   override def toString: String = {
     val importString = if (imported) " imported " else " "
