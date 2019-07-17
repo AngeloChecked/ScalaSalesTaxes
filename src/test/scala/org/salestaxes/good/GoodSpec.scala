@@ -22,7 +22,7 @@ class GoodSpec extends WordSpec with Matchers {
     }
   }
 
-  "imported and taxed generic goods string" should {
+  "imported and taxed generic good string" should {
     "return '1 imported <name>: <price>'" in {
       val good = new Good("bottle of perfume", 1, 47.50, true)
 
@@ -36,7 +36,7 @@ class GoodSpec extends WordSpec with Matchers {
     }
   }
 
-  "taxed generic goods string" should {
+  "taxed generic good string" should {
     "return '1 <name>: <price>'" in {
       val good = new Good("music CD", 1, 14.99, false)
 
@@ -50,7 +50,7 @@ class GoodSpec extends WordSpec with Matchers {
     }
   }
 
-  "generic no-taxable goods string" should {
+  "generic no-taxable good string" should {
     "return '1 <name>: <price>'" in {
       val good = new Food("chocolate bar", 1, 0.85, false)
 
@@ -58,7 +58,7 @@ class GoodSpec extends WordSpec with Matchers {
     }
   }
 
-  "generic imported no-taxable goods string" should {
+  "generic imported no-taxable good string" should {
     "return '<quantity> imported <name>: <price>'" in {
       val good = new Food("box of chocolates", 3, 11.25, true)
 
