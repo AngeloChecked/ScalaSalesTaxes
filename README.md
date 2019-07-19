@@ -18,7 +18,7 @@ Scala solution of [sales-taxes-problem](https://github.com/xpeppers/sales-taxes-
 ### Installing
 
 ```shell
-git clone https://github.com/AngeloChecked/taxweb.git
+git clone https://github.com/AngeloChecked/ScalaSalesTaxes.git
 ```
 
 ## Running the tests
