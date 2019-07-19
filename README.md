@@ -6,12 +6,14 @@ Scala solution of [sales-taxes-problem](https://github.com/xpeppers/sales-taxes-
 
 ### Prerequisites 
 
-
+```
 - Intellij IDEA*
 - IDEA Scala plugin*
 - sbt 
+- git
 
 (*) optionals
+```
 
 ### Installing
 
